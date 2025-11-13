@@ -5,6 +5,7 @@ import { createProject } from "../features/projects/projectsSlice";
 const Projects = () => {
   const [projectName, setProjectName] = useState("");
   const [image, setProjectImages] = useState([]);
+  
 
   const projects = useSelector((state) => state.projects.projects);
   const loading = useSelector((state) => state.projects.loading);
