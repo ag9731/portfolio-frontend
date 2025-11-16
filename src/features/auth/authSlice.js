@@ -12,7 +12,7 @@ export const adminLogin = createAsyncThunk(
 )
 
 const initialState = {
-    user:null,
+    admin:null,
     loading:true,
     error:false,
     isAuthenticated:false,
@@ -34,14 +34,14 @@ const authSlice = createSlice({
         })
         .addCase(adminLogin.fulfilled, (state,action) => {
             state.loading = false,
-            state.user = action.payload,
+            state.admin = action.payload,
             state.error = false,
             state.isAuthenticated = true
         })
         .addCase(adminLogin.rejected, (state,action) => {
             state.loading = false;
             state.error = action.payload;
-            state.user = null;
+            state.admin = null;
             state.isAuthenticated = false;
         })
     }
