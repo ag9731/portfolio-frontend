@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { adminLogin } from "../../features/auth/authSlice";
+import { useNavigate } from 'react-router-dom';
 
 const Admin = () => {
 
@@ -8,6 +9,7 @@ const Admin = () => {
     const [adminEmail, setadminEmail] = useState(null);
     const [adminPassword, setadminPassword] = useState(null);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { loading,error,admin,isAuthenticated,status } = useSelector((state) => state.auth);
 
@@ -15,6 +17,7 @@ const Admin = () => {
         e.preventDefault();
         const result = await dispatch(adminLogin({ adminEmail, adminPassword }));
         if (adminLogin.fulfilled.match(result)) {
+          navigate('/admin-dashboard')
       console.log("Admin Login Successfull");
     }
     }

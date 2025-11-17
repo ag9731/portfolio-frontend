@@ -3,12 +3,17 @@ import ProjectsComponent from "./AdminComponents/ProjectsComponent";
 import SkillComponent from "./AdminComponents/SkillComponent";
 import ExperienceComponent from "./AdminComponents/ExperienceComponent";
 import TestimonialsComponent from "./AdminComponents/TestimonialsComponent";
+import ViewProjects from "./AdminComponents/ViewProjects";
 
 const AdminDashboard = () => {
   const adminMenu = [
     {
       menuName: "Projects",
       component: <ProjectsComponent />,
+    },
+    {
+      menuName: "All Projects",
+      component: <ViewProjects/>
     },
     {
       menuName: "Skills",
@@ -28,7 +33,7 @@ const AdminDashboard = () => {
     adminMenu[0].component
   );
 
-  const handleComponentsChange = (e) => {};
+  // const handleComponentsChange = (e) => {};
 
   return (
     <div className="main flex w-full">
