@@ -43,7 +43,7 @@ const ProjectsComponent = () => {
           onChange={(e) => setProjectName(e.target.value)}
         />
         {/* Projefct Link */}
-        <label>Project Name</label>
+        <label>Project Link</label>
         <input
           type="text"
           className="border-2 p-2"

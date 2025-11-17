@@ -44,7 +44,7 @@ const projectsSlice = createSlice({
       })
       .addCase(createProject.fulfilled, (state, action) => {
         state.loading = false;
-        state.projects = action.payload;
+        state.projects.push(action.payload.project);
         state.success = true;
       })
       .addCase(createProject.rejected, (state, action) => {
