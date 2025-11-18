@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import css from "../../assets/Skills/CSS.png";
 import js from "../../assets/Skills/Javascript.png";
 import html from "../../assets/Skills/html.png";
@@ -33,50 +34,54 @@ const SkillsSection2 = () => {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 0,
-    speed: 6000,
-    cssEase: "linear", // smooth continuous scroll
-    slidesToShow: 5,
+    speed: 4000,
+    cssEase: "linear",
+    slidesToShow: 6,
     slidesToScroll: 1,
     arrows: false,
     pauseOnHover: false,
+
     responsive: [
       {
-        breakpoint: 1024, // tablets
-        settings: {
-          slidesToShow: 4,
-        },
+        breakpoint: 1280,
+        settings: { slidesToShow: 5 },
       },
       {
-        breakpoint: 768, // mobile
-        settings: {
-          slidesToShow: 3,
-        },
+        breakpoint: 1024,
+        settings: { slidesToShow: 4 },
       },
       {
-        breakpoint: 480, // small mobile
-        settings: {
-          slidesToShow: 2,
-        },
+        breakpoint: 768,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 576,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 400,
+        settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <div className="w-full py-10">
-      {/* <h1 className="text-center text-4xl font-bold font-poppins mb-10">
-        My Skills
-      </h1> */}
-
+    <div className="w-full py-10 px-3 sm:px-4 overflow-hidden">
       <Slider {...settings}>
         {skills.map((skill, index) => (
-          <div key={index} className="px-4">
-            <div className="flex flex-col justify-center items-center bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300">
+          <div key={index} className="px-2">
+            <div
+              className="flex flex-col justify-center items-center bg-white 
+              shadow-md hover:shadow-xl rounded-xl p-5 sm:p-6 transition"
+            >
               <img
                 src={skill.img}
                 alt={skill.name}
-                className="w-20 h-20 object-contain"
+                className="w-14 h-14 sm:w-20 sm:h-20 object-contain"
               />
-              <p className="mt-4 font-semibold text-lg">{skill.name}</p>
+              <p className="mt-3 sm:mt-4 font-semibold text-sm sm:text-lg text-center">
+                {skill.name}
+              </p>
             </div>
           </div>
         ))}
