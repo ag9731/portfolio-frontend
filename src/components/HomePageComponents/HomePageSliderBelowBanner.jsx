@@ -40,7 +40,7 @@ const HomePageSliderBelowBanner = () => {
   };
 
   return (
-    <div className="bg-[#fab42e] py-6 font-poppins flex justify-center">
+    <div className="bg-[#fab42e] py-6 font-poppins flex justify-center sm:mt-8 md:mt-0">
       <div className="container mx-auto px-3">
         <Slider {...settings}>
           {skillsSlider.map((skills, index) => (

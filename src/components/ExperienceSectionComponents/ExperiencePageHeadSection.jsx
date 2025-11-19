@@ -14,9 +14,9 @@ const ExperiencePageHeadSection = () => {
             My <span className="text-[#fab42e] italic">Academic And Profesional</span>{" "}
             Journey
           </h1>
-          <h1 className="text-center text-4xl font-bold font-poppins mb-10">
+          {/* <h1 className="text-center text-4xl font-bold font-poppins mb-10">
             My Tech Stack
-          </h1>
+          </h1> */}
         </div>
       </div>
     </div>
